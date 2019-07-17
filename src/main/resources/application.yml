@@ -1,2 +1,35 @@
 server:
   port: 18888
+
+spring:
+  thymeleaf:
+#    mode: LEGACYHTML5
+    encoding: UTF-8
+    cache: false
+    #logging.file和logging.path不能同时使用，如若同时使用，则只有logging.file生效
+logging:
+#  path:
+#  file: D:\logs\demo\demo.log
+#  level:
+#    root: info # 日志默认级别
+#    cxy:
+#      test:
+#        demo:
+#          config: warn #这里我们可以改动root还是INFO级别，将指定包下的日志级别设置为WARN
+  config: classpath:log4j2.xml # 引入了其它配置文件后，如果本配置文件中关于日志的配置没有注释，那么配置文件中的相关配置是不会生效的
+
+#  pattern:
+#    console: d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger - %msg%n #定义样式
+#    %d{HH:mm:ss.SSS}——日志输出时间
+#
+#    %thread——输出日志的进程名字，这在Web应用以及异步任务处理中很有用
+#
+#    %-5level——日志级别，并且使用5个字符靠左对齐
+#
+#    %logger- ——日志输出者的名字
+#
+#    %msg——日志消息
+#
+#    %n——平台的换行符
+
+
